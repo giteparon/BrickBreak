@@ -3,9 +3,54 @@ import java.awt.*;
 
 public class Ball {
 	//your code here!
-	
+	private int x;
+	private int y;
+	private int radius;
+	private int XVelocity = 5;
+	private int YVelocity = 1;
 	//don't forget you need instance variables:
-	
+	public Ball(int _x, int _y, int _radius){
+		x = _x;
+		y = _y;
+		radius = _radius;
+	}
+	public void draw(Graphics g){
+		g.setColor(Color.cyan);
+		g.fillOval(x, y, radius, radius);
+
+	}
+	public int getYpos(){
+		return y;
+	}
+	public int getXpos(){
+		return x;
+	}
+	public int getSize(){
+		return radius;
+	}
+	public void setX(int _x){
+		x = _x;
+	}
+	public void setY(int _y){
+		y = _y;
+	}
+	public void setXVelocity(int _v){
+		XVelocity = _v;
+	}
+	public void setYVelocity(int _v){
+		YVelocity = _v;
+	}
+	public void reverseX(){
+		XVelocity *= -1;
+	}
+	public void reverseY(){
+		YVelocity *= -1;
+	}
+
+	public void move(){
+		y += YVelocity;
+		x += XVelocity;
+	}
 	
 	
 	//constructor(s):
