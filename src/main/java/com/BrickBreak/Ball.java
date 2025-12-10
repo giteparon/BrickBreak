@@ -1,3 +1,10 @@
+/*
+ * Author: Amir
+ * Date: 12/02/24
+ * Description: This is the ball file for a brick break game controlling the ball
+ */
+
+
 package com.BrickBreak;
 import java.awt.*;
 
@@ -14,11 +21,14 @@ public class Ball {
 		y = _y;
 		radius = _radius;
 	}
+	//precondition: g exists
+	//postcondition: draws a ball
 	public void draw(Graphics g){
 		g.setColor(Color.cyan);
 		g.fillOval(x, y, radius, radius);
 
 	}
+	//
 	public int getYpos(){
 		return y;
 	}
@@ -40,13 +50,16 @@ public class Ball {
 	public void setYVelocity(int _v){
 		YVelocity = _v;
 	}
+	//precondition: XVelocity/YVelocity is declared
+	//post condition; reverses the value of velocity
 	public void reverseX(){
 		XVelocity *= -1;
 	}
 	public void reverseY(){
 		YVelocity *= -1;
 	}
-
+	//precondition, x and y are declared
+	//post condition: adds velocity to the x and y values
 	public void move(){
 		y += YVelocity;
 		x += XVelocity;
